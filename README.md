@@ -24,3 +24,10 @@
 
 # Features
 
+Rapid application development
+
+Continuous integration
+
+Distributed work environment
+
+Secure
