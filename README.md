@@ -2,7 +2,7 @@
 
 # Build Steps
 
-> cd directory
+> cd ~
 
 > git init
 
