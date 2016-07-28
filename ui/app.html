@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Force</title>
+		<meta charset='utf-8'>
+		<meta name='apple-mobile-web-app-capable' content='yes'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+		<meta name='apple-touch-fullscreen' content='yes'>
+		<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body id='body'>
+		<div class='view'>
+			<input id='username' type='text' placeholder='Enter Username'>
+			<input id='password' type='password' placeholder='Enter Password'>
+			<input id='confirm-password' type='password' placeholder='Confirm Password' class='hide'>
+			<div class='btn-group-row'>
+				<button id='btn-sign-in' disabled='disabled' onclick='show("view-sign-in")'>Sign In</button>
+				<button id='btn-register' disabled='disabled' onclick='show("view-register")'>Register</button>
+			</div>
+			<button disabled='disabled' class='hide'>Submit</button>
+			<button disabled='disabled' class='hide'>Cancel</button>
+			<div id='auth' class='hide'>Auth</div>
+			<div id='profile' class='hide'>Profile</div>
+			<div id='settings' class='hide'>Settings</div>
+		</div>
+		<script src='app.js'></script>
+	</body>
+</html>
