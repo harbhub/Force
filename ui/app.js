@@ -1,45 +1,20 @@
 'use strict';
-function hide(id) {
-	var elem = document.getElementById(id);
-	if (elem) {
-		elem.classList.add('hide');
-	} else {
-		console.log('Unable to hide #', id);
+var socket = io(window.location.origin);
+var app = angular.module('app', []);
+app.controller('GameController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+	$scope.user = {
+		name: 'P2'
+	};
+	$scope.data = {
+
+	};
+	$scope.cards = cards;
+	$scope.game = new Game({
+		players: ['P1', 'P2']
+	});
+	$scope.me = $scope.game.player[$scope.user.name];
+	$scope.buy = function(name) {
+		console.log('angular buy', name);
 	}
-}
-function show(id) {
-	var elem = document.getElementById(id);
-	if (elem) {
-		elem.classList.remove('hide');
-	} else {
-		console.log('Unable to show #', id);
-	}
-}
-function toggle(id) {
-	var elem = document.getElementById(id);
-	if (elem) {
-		elem.classList.toggle('hide');
-	} else {
-		console.log('Unable to show #', id);
-	}
-}
-var state = {
-	history: ['menu-auth'],
-	previous: ''
-};
-function view(id) {
-	console.log('view #', id);
-	var elem = document.getElementById(id);
-	if (elem) {
-		console.log('elem', elem);
-		state.previous = state.history[state.history.length];
-		state.history.push(id);
-		var previous = document.getElementById(state.previous);
-		if (previous) {
-			previous.classList.add('hide');
-		}
-		elem.classList.remove('hide');
-	} else {
-		console.log('Unable to view #', id);
-	}
-}
+	console.log('scope', $scope);
+}]);

@@ -31,3 +31,13 @@ Continuous integration
 Distributed work environment
 
 Secure
+
+# To Do List
+
+Change interface to remove buttons from cards and replace it with a system that makes the entire item clickable.  Actionable items should display a green border or something that denotes that the user can click that item.
+
+Improve the interface so that everything fits well on the screen.
+
+Order the shop cards so that the cards the player can buy appear at the top of the list.
+
+Shop items should use justify-content space-between for styling.  This should put the cost on the left, the name of the card in the middle, and the stock count on the right.
