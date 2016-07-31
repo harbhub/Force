@@ -2,7 +2,7 @@
   "name": "Force",
   "description": "Versatile application",
   "version": "1.0.0",
-  "main": "./app.js",
+  "main": "./server/server.js",
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
