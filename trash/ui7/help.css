@@ -1,0 +1,251 @@
+/* Clear */
+* {
+	padding: 0;
+	margin: 0;
+}
+/* HTML */
+html {
+	font-family: Arial;
+	font-size: 16px;
+}
+/* Body */
+body {
+	padding-top: 50px;
+	width: 100vw;
+	height: calc(100vw - 50px);
+	min-height: 100vh;
+	overflow: hidden;
+}
+/* Text */
+.text-shadow {
+	text-shadow: 1px 1px 2px black;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left
+}
+/* Bold */
+.bold {
+	font-weight: bold;
+}
+/* Border */
+.border {
+	border: 1px solid;
+}
+.border-bottom {
+	border-bottom: 1px solid;
+}
+.border-top {
+	border-top: 1px solid;
+}
+.border-right {
+	border-right: 1px solid;
+}
+.border-left {
+	border-left: 1px solid;
+}
+/* Cursor */
+.pointer {
+	cursor: pointer;
+}
+/* Dimensions */
+.full {
+	width: 100vw;
+	height: 100vh;
+}
+.full-width {
+	width: 100vw;
+}
+.full-height {
+	height: 100vh;
+}
+.half {
+	width: 50vw;
+	height: 50vh;
+}
+.half-width {
+	width: 50vw;
+}
+.half-height {
+	height: 50vh;
+}
+/* iPad */
+.ipad.landscape {
+	width: 1024px;
+	height: 768px;
+	max-width: 1024px;
+	max-height: 768px;
+}
+.ipad.portrait {
+	width: 768px;
+	height: 1024px;
+	max-width: 768px;
+	max-height: 1024px;
+}
+/* Background Color */
+.bg-white {
+	background: white;
+}
+.bg-black {
+	background: black;
+}
+.bg-gold {
+	background: gold;
+}
+.bg-purple {
+	background: purple;
+}
+.bg-light-blue {
+	background: lightblue;
+}
+/* Color */
+.white {
+	color: white;
+}
+.black {
+	color: black;
+}
+.gold {
+	color: gold;
+}
+.purple {
+	color: purple;
+}
+.light-blue {
+	color: lightblue;
+}
+/* Border Color */
+.border-black {
+	border-color: black;
+}
+.border-white {
+	border-color: white;
+}
+.border-gold {
+	border-color: gold;
+}
+.border-purple {
+	border-color: purple;
+}
+.bg-light-blue {
+	border-color: lightblue;
+}
+/* Full View */
+.full-view {
+	width: 100vw;
+	height: 100vh;
+}
+/* Padding */
+.pad {
+	padding: 5px;
+}
+.pad-left {
+	padding-left: 5px;
+}
+.pad-right {
+	padding-right: 5px;
+}
+.pad-top {
+	padding-top: 5px;
+}
+.pad-bottom {
+	padding-bottom: 5px;
+}
+.pad-horizontal {
+	padding: 0 5px;
+}
+.pad-vertical {
+	padding: 5px 0;
+}
+.no-pad {
+	padding: 0;
+}
+/* Margin */
+.margin {
+	margin: 5px;
+}
+.margin-left {
+	margin-left: 5px;
+}
+.margin-right {
+	margin-right: 5px;
+}
+.margin-top {
+	margin-top: 5px;
+}
+.margin-bottom {
+	margin-bottom: 5px;
+}
+.margin-horizontal {
+	margin: 0 5px;
+}
+.margin-vertical {
+	margin: 5px 0;
+}
+.no-margin {
+	margin: 0;
+}
+/* Flex */
+.flex {
+	display: flex;
+	shrink: 1;
+	grow: 0;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	flex-basis: auto;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	align-self: auto;
+	flex: 0 1 auto;
+}
+.flex.wrap {
+	flex-wrap: wrap;
+}
+.flex.no-wrap {
+	flex-wrap: nowrap;
+}
+.flex.column {
+	flex-direction: column;
+}
+.flex.column-reverse {
+	flex-direction: column-reverse;
+}
+.flex.row {
+	flex-direction: row;
+}
+.flex.row-reverse {
+	flex-direction: row-reverse;
+}
+.flex.center {
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.flex.justify-center {justify-content: center;}
+.flex.justify-start {justify-content: flex-start;}
+.flex.justify-end {justify-content: flex-end;}
+.flex.justify-around {justify-content: space-around;}
+.flex.justify-between {justify-content: space-between;}
+.flex.justify-inherit {justify-content: inherit;}
+.flex.justify-initial {justify-content: initial;}
+.flex.align-items-center {align-items: center;}
+.flex.align-items-start {align-items: flex-start;}
+.flex.align-items-end {align-items: flex-end;}
+.flex.align-items-baseline {align-items: baseline;}
+.flex.align-items-stretch {align-items: stretch;}
+.flex.align-items-inherit {align-items: inherit;}
+.flex.align-items-initial {align-items: initial;}
+.flex.align-content-center {align-content: center;}
+.flex.align-content-start {align-content: flex-start;}
+.flex.align-content-end {align-content: flex-end;}
+.flex.align-content-between {align-content: space-between;}
+.flex.align-content-around {align-content: space-around;}
+.flex.align-content-inherit {align-content: inherit;}
+.flex.align-content-initial {align-content: initial;}

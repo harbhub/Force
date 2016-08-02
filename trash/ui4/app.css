@@ -1,0 +1,68 @@
+/* All */
+* { 
+	padding: 0;
+	margin: 0;
+}
+/* HTML & Body */
+html, body {
+	font-size: 20px;
+	font-family: Arial;
+}
+/* iPad */
+.ipad.landscape {
+	width: 1024px;
+	height: 768px;
+	max-width: 1024px;
+	max-height: 768px;
+}
+.ipad.portrait {
+	width: 768px;
+	height: 1024px;
+	max-width: 768px;
+	max-height: 1024px;
+}
+/* Background */
+.bg-black {
+	background: black;
+}
+.bg-gold {
+	background: gold;
+}
+/* Color */
+.black {
+	color: black;
+}
+.gold {
+	color: gold;
+}
+/* Full View */
+.full-view {
+	width: 100vw;
+	height: 100vh;
+}
+/* Flex */
+.flex {
+	display: flex;
+	shrink: 1;
+	grow: 0;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	flex-basis: auto;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	align-self: auto;
+	flex: 0 1 auto;
+}
+.flex.center {
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.flex.justify-center {justify-content: center;}
+.flex.justify-start {justify-content: flex-start;}
+.flex.justify-end {justify-content: flex-end;}
+.flex.justify-around {justify-content: space-around;}
+.flex.justify-between {justify-content: space-between;}
+/* TODO Finish making flex classes */

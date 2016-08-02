@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>{{title || ''}}</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='flex center justify-start column'>
+		<div id='header' class='flex row center justify-around bg-light-blue'>
+			<div ng-repeat='name in headerItems track by $index'>{{name}}</div>
+		</div>
+		<div id='body' class='flex column center justify-start wrap'>
+			<div class='full'>
+				<div class='flex row center justify-between half-width basis-50' ng-repeat='item in items track by $index'>
+					<div class='flex row center justify-start'>
+						<div class=''>(Cost)</div>
+						<div class=''>{{item.name}}</div>
+					</div>
+					<div class='flex row center'>(Quantity)</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

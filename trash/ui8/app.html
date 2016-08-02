@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>{{title || ''}}</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='flex center justify-start column'>
+		<div id='header' class='flex row center justify-around'>
+			<div ng-repeat='name in headerItems track by $index'>{{name}}</div>
+		</div>
+		<div id='body' class='block overflow-y no-overflow-x'>
+			<div class='flex row wrap center'>
+				<div class='full-width flex center bg-light-sea-green bold'>
+					<div class='pad border-bottom'>Title</div>
+				</div>
+				<div class='half-width flex center bg-seashell border-bottom' ng-class-odd='"border-right"' ng-repeat='item in items track by $index'>
+					<div class='pad'>{{$index + ' ' + item.name}}</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+#header {
+
+	position: fixed;
+
+	top: 0;
+
+	left: 0;
+
+	width: 100vw;
+
+	height: 49px;
+
+	border-bottom: 1px solid black;
+
+	background: lightblue;
+
+	font-weight: bold;
+
+	-webkit-user-select: none;
+
+	user-select: none;
+
+}
+
+#header > div {
+
+	padding: 10px;
+
+	border-radius: 10px;
+
+}
+
+#header > div:hover {
+
+	cursor: pointer;
+
+	color: white;
+
+	text-shadow: 1px 1px 2px black;
+
+}
+
+#body {
+
+	width: 100vw;
+
+	height: calc(100vh - 50px);
+
+	overflow-x: hidden;
+
+	overflow-y: scroll;
+
+	scroll-behavior: smooth;
+
+}
+
+.basis-50 {
+	flex-basis: 50%;
+}

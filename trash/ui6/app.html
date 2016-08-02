@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>{{title}}</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='core.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='flex center full-view bg-white black'>
+		<div class='flex center ipad landscape bg-white black'>
+			<div class='full flex center column'>
+				<div class='flex row center justify-around full-width bg-black white' style='height: 50px; min-height: 50px; max-height: 50px;'>
+					<span class='pointer bold'>Menu</span>
+					<span class='pointer bold'>Coins {{me.coins}}</span>
+					<span class='pointer bold'>Energy {{me.energy}}</span>
+					<span class='pointer bold'>Vouchers {{me.vouchers}}</span>
+				</div>
+				<div class='flex full row center justify-around'>
+					<div class='flex center justify-start wrap column full-height'>
+						<div class='flex center full-width bold margin pointer'>Shop</div>
+						<div class='flex center full-width pad-vertical pointer white bg-purple margin-bottom item' ng-repeat='name in game.shop track by $index'>{{name}}</div>
+						<div ng-if='me.shop.length === 0'>(None)</div>
+					</div>
+					<div class='flex center justify-start wrap column full-height'>
+						<div class='flex center full-width bold pad pointer'>Hand</div>
+						<div class='flex center full-width pad-vertical pointer white bg-purple margin-bottom item' ng-repeat='name in me.hand track by $index'>{{name}}</div>
+						<div ng-if='me.hand.length === 0'>(None)</div>
+					</div>
+					<div class='flex center justify-start wrap column full-height'>
+						<div class='flex center full-width bold pad pointer'>Field</div>
+						<div class='flex center full-width pad-vertical pointer white bg-purple item' ng-repeat='name in me.field track by $index'>{{name}}</div>
+						<div ng-if='me.field.length === 0'>(None)</div>
+					</div>
+					<div class='flex center justify-start wrap column full-height'>
+						<div class='flex center full-width bold pad pointer'>Game Log</div>
+						<div class='flex center full-width pad-vertical pointer white bg-purple item' ng-repeat='message in game.log track by $index'>{{message}}</div>
+						<div ng-if='game.log.length === 0'>(None)</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

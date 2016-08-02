@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='app'>
+	<head>
+		<title>Title</title>
+		<meta charset='utf-8'>
+		<meta name='apple-mobile-web-app-capable' content='yes'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+		<meta name='apple-touch-fullscreen' content='yes'>
+		<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+	</head>
+	<body ng-cloak ng-controller='GameController'>
+		<!-- Shop -->
+		<div id='shop' class='container' ng-class='{hideShop: hideShop}'>
+			<div class='header'>
+				<div id='toggle-shop' class='icon margin-x' ng-click='hideShop = !hideShop;'>
+					<img src='assets/minus.png' ng-if='!hideShop'>
+					<img src='assets/plus.png' ng-if='hideShop'>
+				</div>
+				<span>Shop</span>
+				<div id='help-shop' class='icon margin-x'>
+					<img src='assets/help.png'>
+				</div>
+			</div>
+			<div class='body' ng-if='!hideShop'>
+				<div ng-if='game.shop.length > 0' ng-class='{coin: cards[name].type === "coin", action: cards[name].type === "action", mixed: cards[name].type === "mixed", army: cards[name].type === "army"}' ng-repeat='name in game.shop track by $index' class='item'>
+					<div class='row'>
+						<span>{{'$' + cards[name].cost + ' ' + name}}</span>
+						<!-- <div class='row'> -->
+							<span>{{'(' + game.stock[name] + ')'}}</span>
+							<div id='toggle-shop' class='icon margin-x pointer' ng-if='me.name === game.current.name && me.vouchers >= 1 && me.coins >= cards[name].cost' ng-click='me.buy(name);'>
+								<img src='assets/bell-alt-2.png'>
+							</div>
+						<!-- </div> -->
+					</div>
+				</div>
+				<div ng-if='game.shop.length === 0' class='item justify-center'>(None)</div>
+			</div>
+		</div>
+		<!-- Hand -->
+		<div id='hand' class='container' ng-class='{hideHand: hideHand}'>
+			<div class='header'>
+				<div id='toggle-shop' class='icon margin-x' ng-click='hideHand = !hideHand;'>
+					<img src='assets/minus.png' ng-if='!hideHand'>
+					<img src='assets/plus.png' ng-if='hideHand'>
+				</div>
+				<span>Hand</span>
+				<div id='help-hand' class='icon margin-x'>
+					<img src='assets/help.png'>
+				</div>
+			</div>
+			<div class='body' ng-if='!hideHand'>
+				<div ng-if='me.hand.length > 0' ng-class='{coin: cards[name].type === "coin", action: cards[name].type === "action", mixed: cards[name].type === "mixed", army: cards[name].type === "army"}' ng-repeat='name in me.hand track by $index' class='item justify-center'>
+					<span>{{name}}</span>
+					<div id='play-card' class='icon margin-x pointer' ng-if='me.name === game.current.name && (cards[name].type === "coin" || (cards[name].type === "action" && me.energy >= 1))' ng-click='me.play(name);'>
+						<img src='assets/hologram.png'>
+					</div>
+				</div>
+				<div class='item justify-center' ng-click='me.endTurn();' ng-if='me.name === game.current.name'>
+					<span>End Turn</span>
+				</div>
+				<div ng-if='me.hand.length === 0' class='item justify-center'>(None)</div>
+			</div>
+		</div>
+		<!-- Field -->
+		<div id='field' class='container' ng-class='{hideField: hideField}'>
+			<div class='header'>
+				<div id='toggle-field' class='icon margin-x' ng-click='hideField = !hideField;'>
+					<img src='assets/minus.png' ng-if='!hideField'>
+					<img src='assets/plus.png' ng-if='hideField'>
+				</div>
+				<span>Field</span>
+				<div id='help-field' class='icon margin-x'>
+					<img src='assets/help.png'>
+				</div>
+			</div>
+			<div class='body' ng-if='!hideField'>
+				<div ng-if='me.field.length > 0' ng-class='{coin: cards[name].type === "coin", action: cards[name].type === "action", mixed: cards[name].type === "mixed", army: cards[name].type === "army"}' ng-repeat='name in me.field track by $index' class='item justify-center'>{{name}}</div>
+				<div ng-if='me.field.length === 0' class='item justify-center'>(None)</div>
+			</div>
+		</div>
+		<!-- Discard -->
+		<div id='discard' class='container' ng-class='{hideDiscard: hideDiscard}'>
+			<div class='header'>
+				<div id='toggle-discard' class='icon margin-x' ng-click='hideDiscard = !hideDiscard;'>
+					<img src='assets/minus.png' ng-if='!hideDiscard'>
+					<img src='assets/plus.png' ng-if='hideDiscard'>
+				</div>
+				<span>Discard</span>
+				<div id='help-discard' class='icon margin-x'>
+					<img src='assets/help.png'>
+				</div>
+			</div>
+			<div class='body' ng-if='!hideDiscard'>
+				<div ng-if='me.discard.length > 0' ng-class='{coin: cards[name].type === "coin", action: cards[name].type === "action", mixed: cards[name].type === "mixed", army: cards[name].type === "army"}' ng-repeat='name in me.discard track by $index' class='item justify-center'>
+					<span>{{name}}</span>
+				</div>
+				<div ng-if='me.discard.length === 0' class='item justify-center'>(None)</div>
+			</div>
+		</div>
+		<!-- Log -->
+		<div id='log' class='container' ng-class='{hideLog: hideLog}'>
+			<div class='header'>
+				<div id='toggle-log' class='icon margin-x' ng-click='hideLog = !hideLog;'>
+					<img src='assets/minus.png' ng-if='!hideLog'>
+					<img src='assets/plus.png' ng-if='hideLog'>
+				</div>
+				<span>Game Log</span>
+				<div id='help-log' class='icon margin-x'>
+					<img src='assets/help.png'>
+				</div>
+			</div>
+			<div class='body' ng-if='!hideLog'>
+				<div ng-if='game.log.length > 0' ng-repeat='entry in game.log track by $index' class='item justify-center'>{{entry}}</div>
+				<div ng-if='game.log.length === 0' class='item justify-center'>(None)</div>
+			</div>
+		</div>
+		<script src='game/helpers.js'></script>
+		<script src='game/cards.js'></script>
+		<script src='game/game.js'></script>
+		<script src='app.js'></script>
+	</body>
+</html>
