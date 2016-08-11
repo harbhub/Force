@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Force</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body style='width: 100vw; min-height: 100vh; height: auto;' class='flex row-wrap center'>
+		<div style='max-width: 1024px; min-width: 300px;' class='border'>
+			<div style='height: 50px;' class='fill-width flex row-no-wrap center justify-around'>
+				<div class='pad	pointer'>Home</div>
+				<div class='pad	pointer'>Lobby</div>
+				<div class='pad	pointer'>Settings</div>
+			</div>
+			<div style='' class='fill-width flex row-no-wrap center'>
+				<div class='pad	pointer' ng-click='displayCard("Bronze")'>Bronze</div>
+			</div>
+			<div class='backdrop flex center row-wrap' ng-if='showingCard'>
+				<div style='min-width: 300px; min-height: 300px;' class='flex row-wrap center bg-white margin'>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

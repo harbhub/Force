@@ -1,0 +1,376 @@
+/* Special */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font: 16px Arial sans-serif;
+}
+/* Backdrop */
+.backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	background: lightblue;
+	opacity: 0.3;
+	z-index: -10;
+}
+/* Position */
+.position-fixed {
+	position: fixed;
+}
+.position-absolute {
+	position: absolute;
+}
+.position-relative {
+	position: relative;
+}
+.position-static {
+	position: static;
+}
+.position-inherit {
+	position: inherit;
+}
+.position-initial {
+	position: initial;
+}
+/* Select */
+.select {
+	-webkit-user-select: auto;
+	user-select: auto;
+}
+.no-select {
+	-webkit-user-select: none;
+	user-select: none;
+}
+/* Text */
+.text-shadow {
+	text-shadow: 1px 1px 2px black;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+/* Bold */
+.bold {
+	font-weight: bold;
+}
+/* Border */
+.border {
+	border: 1px solid black;
+}
+.border-bottom {
+	border-bottom: 1px solid black;
+}
+.border-top {
+	border-top: 1px solid black;
+}
+.border-right {
+	border-right: 1px solid black;
+}
+.border-left {
+	border-left: 1px solid black;
+}
+/* Cursor */
+.pointer {
+	cursor: pointer;
+}
+.arrow {
+	cursor: default;
+}
+/* Dimensions */
+.fill {
+	width: 100%;
+	height: 100%;
+}
+.fill-width {
+	width: 100%;
+}
+.fill-height {
+	height: 100%;
+}
+.full {
+	width: 100vw;
+	height: 100vh;
+}
+.full-width {
+	width: 100vw;
+}
+.full-height {
+	height: 100vh;
+}
+.half {
+	width: 50vw;
+	height: 50vh;
+}
+.half-width {
+	width: 50vw;
+}
+.half-height {
+	height: 50vh;
+}
+/* iPad */
+.ipad.landscape {
+	width: 1024px;
+	height: 768px;
+	max-width: 1024px;
+	max-height: 768px;
+}
+.ipad.portrait {
+	width: 768px;
+	height: 1024px;
+	max-width: 768px;
+	max-height: 1024px;
+}
+/* Background Color */
+.bg-transparent {
+	background: transparent;
+}
+.bg-white {
+	background: white;
+}
+.bg-black {
+	background: black;
+}
+.bg-gold {
+	background: gold;
+}
+.bg-purple {
+	background: purple;
+}
+.bg-light-blue {
+	background: lightblue;
+}
+.bg-seashell {
+	background: seashell;
+}
+.bg-light-sea-green {
+	background: lightseagreen;
+}
+/* Icon */
+.icon {
+	width: 32px;
+	height: 32px;
+}
+.icon-extra-large {
+	width: 64px;
+	height: 64px;
+}
+.icon-large {
+	width: 48px;
+	height: 48px;
+}
+.icon-extra-small {
+	width: 24px;
+	height: 24px;
+}
+.icon-small {
+	width: 36px;
+	height: 36px;
+}
+/* Inset Shadow */
+.inset-green {
+	box-shadow: inset 0px 0px 5px lightseagreen;
+}
+/* Color */
+.white {
+	color: white;
+}
+.black {
+	color: black;
+}
+.gold {
+	color: gold;
+}
+.purple {
+	color: purple;
+}
+.light-blue {
+	color: lightblue;
+}
+/* Border Color */
+.border-black {
+	border-color: black;
+}
+.border-white {
+	border-color: white;
+}
+.border-gold {
+	border-color: gold;
+}
+.border-purple {
+	border-color: purple;
+}
+.border-light-blue {
+	border-color: lightblue;
+}
+/* Padding */
+.pad {
+	padding: 5px;
+}
+.pad-left {
+	padding-left: 5px;
+}
+.pad-right {
+	padding-right: 5px;
+}
+.pad-top {
+	padding-top: 5px;
+}
+.pad-bottom {
+	padding-bottom: 5px;
+}
+.pad-horizontal {
+	padding: 0 5px;
+}
+.pad-vertical {
+	padding: 5px 0;
+}
+.no-pad {
+	padding: 0;
+}
+/* Margin */
+.margin {
+	margin: 5px;
+}
+.margin-auto {
+	margin: auto;
+}
+.margin-left {
+	margin-left: 5px;
+}
+.margin-right {
+	margin-right: 5px;
+}
+.margin-top {
+	margin-top: 5px;
+}
+.margin-bottom {
+	margin-bottom: 5px;
+}
+.margin-horizontal {
+	margin: 0 5px;
+}
+.margin-vertical {
+	margin: 5px 0;
+}
+.no-margin {
+	margin: 0;
+}
+/* Overflow */
+.overflow {
+	overflow: scroll;
+}
+.overflow-x {
+	overflow-x: scroll;
+}
+.overflow-y {
+	overflow-y: scroll;
+}
+.no-overflow {
+	overflow: hidden;
+}
+.no-overflow-x {
+	overflow-x: hidden;
+}
+.no-overflow-y {
+	overflow-y: hidden;
+}
+/* Scroll */
+.scroll-smooth {
+	scroll-behavior: smooth;
+}
+/* Block */
+.block {
+	display: block;
+}
+/* Flex */
+.flex {
+	display: flex;
+	shrink: 1;
+	grow: 0;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex-flow: row nowrap;
+	flex-basis: auto;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	align-self: auto;
+	flex: 0 1 auto;
+}
+.flex.wrap {
+	flex-wrap: wrap;
+}
+.flex.no-wrap {
+	flex-wrap: nowrap;
+}
+.flex.column {
+	flex-direction: column;
+}
+.flex.column-wrap {
+	flex-flow: column wrap;
+}
+.flex.column-no-wrap {
+	flex-flow: column nowrap;
+}
+.flex.column-reverse {
+	flex-direction: column-reverse;
+}
+.flex.row {
+	flex-direction: row;
+}
+.flex.row-wrap {
+	flex-flow: row wrap;
+}
+.flex.row-no-wrap {
+	flex-flow: row nowrap;
+}
+.flex.row-reverse {
+	flex-direction: row-reverse;
+}
+.flex.center {
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.flex.justify-center {justify-content: center;}
+.flex.justify-start {justify-content: flex-start;}
+.flex.justify-end {justify-content: flex-end;}
+.flex.justify-around {justify-content: space-around;}
+.flex.justify-between {justify-content: space-between;}
+.flex.justify-inherit {justify-content: inherit;}
+.flex.justify-initial {justify-content: initial;}
+.flex.align-items-center {align-items: center;}
+.flex.align-items-start {align-items: flex-start;}
+.flex.align-items-end {align-items: flex-end;}
+.flex.align-items-baseline {align-items: baseline;}
+.flex.align-items-stretch {align-items: stretch;}
+.flex.align-items-inherit {align-items: inherit;}
+.flex.align-items-initial {align-items: initial;}
+.flex.align-content-center {align-content: center;}
+.flex.align-content-start {align-content: flex-start;}
+.flex.align-content-end {align-content: flex-end;}
+.flex.align-content-between {align-content: space-between;}
+.flex.align-content-around {align-content: space-around;}
+.flex.align-content-inherit {align-content: inherit;}
+.flex.align-content-initial {align-content: initial;}
+.flex.align-self-center {align-self: center;}
+.flex.order-0 {order: 0;}
+.flex.order-1 {order: 1;}
+.flex.order-2 {order: 2;}
+.flex.order-3 {order: 3;}
+.flex.order-4 {order: 4;}
+.flex.order-5 {order: 5;}
+.flex.order-6 {order: 6;}
+.flex.order-7 {order: 7;}
+.flex.order-8 {order: 8;}
+.flex.order-9 {order: 9;}

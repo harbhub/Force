@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html id='app' ng-app='base' ng-controller='baseController' lang='en' ng-cloak>
+	<head>
+		<title>Emporium</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<link rel='stylesheet' type='text/css' href='base.css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+	</head>
+	<body>
+
+		<!-- Menu -->
+		<img ng-if='!me.menu' ng-click='toggleMenu()' class='menu-icon bottom-center' src='/bin/public/icons/yin-yang.png'>
+
+		<img ng-if='me.menu' ng-click='toggleMenu()' class='menu-icon bottom-center' src='/bin/public/icons/close.png'>
+
+		<img ng-if='me.menu && !me.volume' ng-click='toggleVolume()' class='menu-icon bottom-left success' src='/bin/public/icons/volume-on.png'>
+
+		<img ng-if='me.menu && me.volume' ng-click='toggleVolume()' class='menu-icon bottom-left warn' src='/bin/public/icons/volume-off.png'>
+
+		<img ng-if='me.menu && !help' ng-click='show("help")' class='menu-icon bottom-right info' src='/bin/public/icons/help.png'>
+
+		<!-- <img ng-if='menu' ng-click='' class='menu-icon top-left' src='/bin/public/icons/account.png'>
+		<img ng-if='menu' ng-click='' class='menu-icon top-center' src='/bin/public/icons/shop.png'>
+		<img ng-if='menu' ng-click='' class='menu-icon top-right' src='/bin/public/icons/transparent.png'> -->
+
+		<!-- Chat -->
+
+		<!-- Landing -->
+		<div ng-if='!me.showing || me.showing === "root"' id='root' class='container'>
+			<div class='wrapper'>
+				<div class='title'>Yin Yang</div>
+				<div class='bar'></div>
+				<div class='form'>
+					<div class='group'>
+						<div class='label'>Username</div>
+						<input name='username' ng-model='me.username.value' maxlength='{{me.username.max}}' required='true' class='input' type='text' autocomplete='off'>
+					</div>
+					<div class='bar'></div>
+					<div class='group'>
+						<div class='label'>Password</div>
+						<input name='password' ng-model='me.password.value' maxlength='{{me.password.max}}' required='true' class='input' type='password' autocomplete='off'>
+					</div>
+					<div class='bar text-warn'>{{me.invalidForm}}</div>
+					<div class='group'>
+						<button ng-click='auth()' class='button'>Log In</button>
+						<button ng-click='register()' class='link'>Register</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Help -->
+		<div ng-if='me.showing === "help"' class='help'>
+			<img ng-click='show("previous")' class='menu-icon bottom-center z-3' src='/bin/public/icons/close.png'>
+		</div>
+
+		<!-- Tutorial -->
+
+		<!-- Lobby -->
+		<div ng-if='me.showing === "lobby"' id='lobby' class='container'>
+			<div class='wrapper'>
+				<div class='title'>Lobby</div>
+				<div class='item' ng-repeat='item in lists.lobby track by $index'>
+					<button class='button' ng-click='click(item.target)'>{{item.name}}</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Waiting Room -->
+
+		<!-- Activity -->
+
+		<!-- Player -->
+		<div ng-if='me.showing === "player"'>
+			<div>Stamina</div>
+			<div>Bells</div>
+			<div>Coins</div>
+			<div>Play Card Zone</div>
+			<div>
+				<div>Hand</div>
+				<div>Card</div>
+				<div>Card</div>
+				<div>Card</div>
+				<div>Card</div>
+				<div>Card</div>
+			</div>
+		</div>
+
+		<!-- Emporium -->
+		<div ng-if='me.showing === "emporium"' id='emporium' class='container'>
+			<div class='wrapper'>
+				<div class='item'>Emporium</div>
+				<div class='item' ng-repeat='item in emporiumItems track by $index'>
+					<div>{{item.title}}</div>
+					<br>
+					<div>{{item.description}}</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Blank -->
+		<div ng-if='me.showing === "blank"'id='lobby' class='container'>
+			<div class='wrapper'>
+				<div class='item'>Blank</div>
+			</div>
+		</div>
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='base.js'></script>
+
+	</body>
+</html>

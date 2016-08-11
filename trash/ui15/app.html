@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Force</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='base'>
+		<div class='bar header'>
+			<div ng-repeat='item in headerItems track by $index' class='item pointer no-select brown'>Item {{$index}}</div>
+		</div>
+	</body>
+</html>

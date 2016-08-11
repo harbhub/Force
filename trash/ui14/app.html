@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Force</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='flex column-wrap center'>
+		<div style='width: 310px; border-radius-top-left: 5px; border-radius-top-right: 5px;' class='no-select flex center justify-around row-no-wrap bg-light-blue'>
+			<div class='flex row-no-wrap center bold pointer'>
+				<img class='icon' src='assets/lightning-bolt.png'>
+				<div class='pad'>1</div>
+			</div>
+			<div class='flex row-no-wrap center bold pointer'>
+				<img class='icon' src='assets/bell.png'>
+				<div class='pad'>1</div>
+			</div>
+			<div class='flex row-no-wrap center bold pointer'>
+				<img class='icon' src='assets/coin.png'>
+				<div class='pad'>$0</div>
+			</div>
+		</div>
+		<div style='width: 300px;' class='margin no-select pointer flex center justify-around row-no-wrap bg-seashell'>
+			<div class='pad no-select bold pointer'>Swordsman</div>
+		</div>
+		<div style='width: 300px;' class='margin no-select pointer flex center justify-around row-no-wrap bg-seashell inset-green'>
+			<div class='pad no-select bold pointer'>Bronze</div>
+		</div>
+		<div style='width: 300px;' class='margin no-select pointer flex center justify-around row-no-wrap bg-seashell'>
+			<div class='pad no-select bold pointer'>Swordsman</div>
+		</div>
+		<div style='width: 300px;' class='margin no-select pointer flex center justify-around row-no-wrap bg-seashell inset-green'>
+			<div class='pad bold'>Bronze</div>
+		</div>
+		<div style='width: 300px;' class='margin no-select pointer flex center justify-around row-no-wrap bg-seashell inset-green'>
+			<div class='pad no-select bold pointer'>Bronze</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='app' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Title</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='orbit-controls.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body>
+		<!-- <div class='top'>
+			<div class='container'>
+				<div class='flex column-no-wrap center full'>
+					<input ng-model='me.name' class='pad' type='text' placeholder='Enter User Name'>
+					<label class='bg-white'>{{me.name}}</label>
+				</div>
+			</div>
+		</div> -->
+		<!-- <div class='top'>
+			<div class='container'>
+				<form style='opacity: 0.6;' class='flex column-no-wrap center full bg-light-blue'>
+					<label>Name</label>
+					<input type='text' placeholder='Name'>
+					<label>Cost</label>
+					<select>
+						<option class='fire'>Fire</option>
+						<option class='water'>Water</option>
+						<option class='spirit'>Spirit</option>
+					</select>
+					<label>Image</label>
+					<input type='file' placeholder='Image'>
+					<label>Description</label>
+					<textarea placeholder='Description'></textarea>
+					<button>Create Card</button>
+				</form>
+			</div>
+		</div> -->
+		<!-- <div class='top'>
+			<div class='container'>
+				<div class='list'>
+					<div class='card' ng-class='card.class' ng-repeat='card in cards | orderBy: "class" track by $index'>
+							<div class='header'>
+								<div class='cost'>${{card.cost}}</div>
+								<div class='name'>{{card.name}}</div>
+								<div class='count'>x{{card.count}}</div>
+							</div>
+							<img class='image' ng-src='{{card.image}}'>
+							<div class='description'>{{card.description}}</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='controller' class='app' lang='en' ng-cloak>
+	<head>
+		<title>{{title || ''}}</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body class='flex center justify-start column'>
+		<div id='header' class='flex row center justify-around bold bg-light-blue border fixed full-width'>
+			<div class='no-select pad' ng-repeat='name in headerItems track by $index'>{{name}}</div>
+		</div>
+		<div id='body' class=' full-width block overflow-y no-overflow-x scroll-smooth'>
+			<!-- Shop -->
+			<div style='max-width: 400px;' class='flex row wrap center margin-auto'>
+				<div class='full-width flex center bg-light-sea-green bold border-bottom border-left border-right no-select arrow'>
+					<div class='pad'>Shop</div>
+				</div>
+				<div style='max-width: 200px;' class='half-width flex center justify-between bg-seashell border-bottom arrow no-select' ng-class-odd='"odd-item"' ng-class-even='"even-item"' ng-class='{"last-item": $last}' ng-repeat='item in shop track by $index'>
+					<div class='pad'>$1</div>
+					<div class='pad'>{{item}}</div>
+					<div class='pad'>(10)</div>
+				</div>
+				<div style='max-width: 400px;' ng-if='shop.length === 0' class='full-width flex center bg-seashell border-bottom arrow no-select' >
+					<div class='pad'>(None)</div>
+				</div>
+			</div>
+			<!-- Hand -->
+			<div class='flex row wrap center'>
+				<div class='full-width flex center bg-light-sea-green bold border-bottom no-select arrow'>
+					<div class='pad'>Hand</div>
+				</div>
+				<div class='half-width flex center bg-seashell border-bottom arrow no-select' ng-class-odd='"odd-item"' ng-class='{"last-item": $last}' ng-repeat='item in hand track by $index'>
+					<div class='pad'>{{item}}</div>
+				</div>
+				<div ng-if='hand.length === 0' class='full-width flex center bg-seashell border-bottom arrow no-select' >
+					<div class='pad'>(None)</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

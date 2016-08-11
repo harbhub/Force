@@ -1,0 +1,19 @@
+#header > div:hover {
+	cursor: pointer;
+	color: white;
+	text-shadow: 1px 1px 2px black;
+}
+.even-item {
+	/* width: calc(50vw - 1px); */
+	border-right: 1px solid black;
+	/* border-left: 1px solid black; */
+}
+.odd-item {
+	/* width: calc(50vw - 1px); */
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
+.last-item.odd-item {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}

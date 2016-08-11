@@ -1,0 +1,231 @@
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url(/bin/public/fonts/gotham-bold.ttf) format('truetype');
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+	font-family: 'Gotham Bold';
+}
+button {
+	border: none;
+}
+html, body {
+	font-family: 'Gotham Bold';
+	font: 16px sans-serif;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row wrap;
+	background: white;
+}
+#menu {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row wrap;
+	background: white;
+}
+.menu-icon {
+	position: absolute;
+	z-index: 1;
+	transform: translate(-50%, 0);
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	border: 1px solid black;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	cursor: pointer;
+	overflow: hidden;
+	background: white;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.menu-icon:hover {
+	border: 1px dashed black;
+}
+.menu-icon.bottom-left {
+	left: 25%;
+	bottom: 20px;
+}
+.menu-icon.bottom-center {
+	left: 50%;
+	bottom: 20px;
+}
+.menu-icon.bottom-right {
+	left: 75%;
+	bottom: 20px;
+}
+.menu-icon.top-left {
+	left: 25%;
+	bottom: 70px;
+}
+.menu-icon.top-center {
+	left: 50%;
+	bottom: 70px;
+}
+.menu-icon.top-right {
+	left: 75%;
+	bottom: 70px;
+}
+.menu-icon.topmost-center {
+	left: 50%;
+	top: 20px;
+}
+.help {
+	position: absolute;
+	z-index: 2;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background: lightskyblue;
+	overflow: hidden;
+}
+.z-3 {
+	z-index: 3;
+}
+.container {
+	text-align: center;
+	width: 100vw;
+	min-height: 100vh;
+	padding-top: 20px;
+	height: auto;
+	background: white;
+	display: block;
+	overflow-y: auto;
+	padding-bottom: 90px;
+}
+.container > .wrapper {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100vw;
+}
+.container > .wrapper > .item {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+}
+.title {
+	font-weight: bold;
+	font-size: 2.4em;
+}
+.form {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 320px;
+}
+.form > .group {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	padding: 10px;
+	position: relative;
+	background: white;
+}
+.form > .group > .label {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	align-content: center;
+	position: absolute;
+	padding: 10px;
+	top: 50%;
+	left: 0;
+	transform: translate(10px, -50%);
+	background: transparent;
+}
+.form > .group > .input {
+	cursor: pointer;
+	z-index: 2;
+	font-size: 1.2em;
+	width: 100%;
+	height: 40px;
+	padding-left: 100px;
+	padding-right: 10px;
+	border: 2px solid black;
+	background: transparent;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-start;
+}
+.form > .group > .input:focus {
+	cursor: text;
+}
+.form > .group > .button {
+	cursor: pointer;
+	padding: 10px;
+	background: black;
+	color: white;
+	font-size: 1.2em;
+	width: 50%;
+}
+.form > .group > .link {
+	width: 50%;
+	margin-left: 10px;
+	cursor: pointer;
+	color: black;
+	background: white;
+	padding: 10px;
+	box-shadow: inset 0 0 10px black;
+	font-size: 1.2em;
+}
+.bar {
+	width: 100%;
+	height: 20px;
+	color: black;
+	text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+.warn {
+	background: lightgoldenrodyellow;
+}
+.success {
+	background: lightgreen;
+}
+.info {
+	background: lightskyblue;
+}
+.text-warn {
+	color: red;
+}
+.processing {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	z-index: 4;
+}

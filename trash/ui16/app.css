@@ -1,0 +1,26 @@
+.menu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	background: rgba(0, 0, 0, 0.1);
+}
+.menu-icon {
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0, 0, 200, 0.2);
+	border-radius: 100%;
+	border: 1px solid rgba(0, 0, 200, 0.2);
+	margin: 10px;
+}
+.menu-icon:hover {
+	border: 1px solid rgba(0, 0, 200, 0.4);
+}
+.menu-image {
+	width: 34px;
+	height: 34px;
+}
+.scene {
+	width: 100vw;
+	height: 100vh;
+}

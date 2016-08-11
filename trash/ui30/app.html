@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='app' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Title</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body>
+		<div ng-if='me.inLobby' class='modal'>
+			<div class='modal-header'>Lobby</div>
+			<div class='modal-body'>
+				<div ng-click='input("name")' class='input'>
+					<div>{{me.name || me.focus === "name" ? me.name : 'Enter Name'}}</div>
+					<input id='input-name' ng-model='me.name' type='text'>
+				</div>
+				<div ng-click='input("room");' class='input'>
+					<div>{{me.room || me.focus === "room" ? me.room : 'Enter Room'}}</div>
+					<input id='input-room' ng-model='me.room' type='text'>
+				</div>
+			</div>
+			<div ng-click='join()' class='modal-footer'>Join Room</div>
+		</div>
+		<div ng-if='me.inRoom' class='modal'>
+			<div class='modal-header'>{{me.room}}</div>
+			<div class='modal-body justify-between'>
+				<div class='modal-item' ng-repeat='player in me.players track by $index'>{{player.name}}</div>
+			</div>
+			<div ng-click='leave()' class='modal-footer'>Leave Room</div>
+		</div>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='orbit-controls.js'></script>
+		<script src='cards.js'></script>
+		<script src='app.js'></script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html id='app' ng-app='app' ng-controller='app' class='app' lang='en' ng-cloak>
+	<head>
+		<title>Title</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+		<link rel='stylesheet' type='text/css' href='help.css'>
+		<link rel='stylesheet' type='text/css' href='app.css'>
+	</head>
+	<body>
+		<div class='top'>
+			<div class='container'>
+				<div class='list'>
+					<div class='card-wrap'>
+						<div class='card' ng-class='card.class' ng-repeat='card in cards track by $index'>
+							<div class='header'>
+								<div class='cost'>${{card.cost}}</div>
+								<div class='name'>{{card.name}}</div>
+								<div class='count'>x{{card.count}}</div>
+							</div>
+							<div class='image-wrap'>
+								<img class='image' ng-src='{{card.imageSource}}'>
+							</div>
+							<div class='description'>{{card.description}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
